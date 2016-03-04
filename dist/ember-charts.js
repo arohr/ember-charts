@@ -5934,7 +5934,7 @@ define("ember-charts/templates/components/chart-component", ["exports", "module"
     return {
       meta: {
         "fragmentReason": false,
-        "revision": "Ember@2.3.1",
+        "revision": "Ember@2.4.1",
         "loc": {
           "source": null,
           "start": {
