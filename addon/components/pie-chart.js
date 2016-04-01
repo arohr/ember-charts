@@ -148,7 +148,7 @@ const PieChartComponent = ChartComponent.extend(FloatingTooltipMixin,
       slicesLeft = _.take(slicesLeft, maxNumberOfSlices);
     }
 
-    debugger;
+    // debugger;
     // only push other slice if there is more than one other item
     if (otherItems.length === 1) {
       //debugger;
@@ -372,12 +372,14 @@ const PieChartComponent = ChartComponent.extend(FloatingTooltipMixin,
     // assumes height of all the labels are the same
     var labelOverlap = function(side, ypos, height) {
       var positions = usedLabelPositions[side];
+      var a = false
       _.each(positions, function(pos) {
+        debugger
         if (Math.abs(ypos - pos) < height) {
-          return true;
+          a = true;
         }
       });
-      return false;
+      return a;
     };
     if (this.get('numSlices') > 1) {
       return {
@@ -411,7 +413,9 @@ const PieChartComponent = ChartComponent.extend(FloatingTooltipMixin,
           var labelYPos = f(y);
           var labelHeight = this.getBBox().height;
           var side = labelXPos > 0 ? 'right' : 'left';
+          debugger
           if (labelOverlap(side, labelYPos, labelHeight)) {
+            debugger
             if (side === 'right') {
               labelYPos = _.max(usedLabelPositions[side]) + labelHeight;
             } else {
@@ -512,6 +516,8 @@ const PieChartComponent = ChartComponent.extend(FloatingTooltipMixin,
         return d.data.label;
       }
     });
+
+    debugger
 
     return groups.select('text.data').text(function(d) {
       return d.data.label;

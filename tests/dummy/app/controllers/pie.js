@@ -25,10 +25,10 @@ export default SlideController.extend({
   // ---------
 
   maxNumberOfSlices: 8,
-  minSlicePercent: 2,
+  minSlicePercent: 0, //2
   maxRadius: 250,
   labelWidthMultiplier: 0.25,
-  numDecimalPlaces: 0,
+  numDecimalPlaces: 1, //0
 
   // ---------
   // Data Selection
@@ -61,6 +61,7 @@ export default SlideController.extend({
     };
   }),
 
-  selectedData: 'asset_values'
+  //selectedData: 'asset_values'
+  selectedData: 'experiment_range2'
 
 });
